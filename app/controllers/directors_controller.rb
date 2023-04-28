@@ -23,11 +23,7 @@ class DirectorsController < ApplicationController
     render({ :template => "directors_templates/show.html.erb"})
   end
   def younger
-    # params look like {"an_id"=>"42"}
-    the_id = params.fetch("an_id")
-
-    @the_director = Director.where({ :id => the_id }).at(0)
-    @filmography = Movie.where({ :director_id => @the_director.id})
+    @the_director = Director.order({ :dob => :desc }).where.not(dob: nil).at(0)
     render({ :template => "directors_templates/younger.html.erb"})
   end
 end
