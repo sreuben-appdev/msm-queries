@@ -59,7 +59,7 @@
 <h2>Filmography</h2>
 
 <table border="1">
-<%= @characters.each do |a_character| %>
+<% @characters.each do |a_character| %>
   <% movie = Movie.where({ :id => a_character.movie_id }).at(0) %>
   <% director = Director.where({ :id => movie.director_id }).at(0) %>
   <tr>
