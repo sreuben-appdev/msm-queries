@@ -1,3 +1,22 @@
+<h1> List of all movies </h1>
+
+<table border="1">
 <% @movies.each do |movie| %>
-  <p><%= movie.title %></p>
+  <tr>
+    <td><%= movie.id %></td>
+    <td>
+          <img src="http://robohash.org/<%= movie.image %>">
+    </td>
+
+    <td><%= movie.image %></td>
+    <td><%= movie.title %></td>
+    <td><%= movie.year %></td>
+    <td><%= movie.director_id %></td>
+    <td>
+      <a href="/movies/<%= movie.id %>">
+          Show details
+      </a>
+    </td>
+  </tr>
 <% end %>
+</table>
