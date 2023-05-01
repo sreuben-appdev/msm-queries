@@ -1,7 +1,7 @@
 class ActorsController < ApplicationController
   def index
-    @list_of_actors = actor.order.all
+    @actors = Actor.all
 
-    render({ :template => "actors_templates/actors.html.erb"})
+    render({ :template => "actors_templates/index.html.erb"})
   end
 end
