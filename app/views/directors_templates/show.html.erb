@@ -63,7 +63,7 @@
 <h2>Filmography</h2>
 
 <table border="1">
-<%= @filmography.each do |a_film| %>
+<% @filmography.each do |a_film| %>
   <tr>
     <td>
       <%= a_film.id%>
@@ -82,7 +82,7 @@
       <%= d.name %>
     </td>
     <td>
-      <a href="">
+      <a href="/movies/<%= a_film.id%>">
       Show details
       </a>
       </td>
